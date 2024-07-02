@@ -23,20 +23,20 @@ const AlbumPhotos = () => {
     fetchPhotos();
   }, [albumId]);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
 
   return (
-    <div>
+    <div className="container">
       <h1>Album Photos</h1>
-      <ul>
+      <div className="album-photos">
         {photos.map(photo => (
-          <li key={photo.id}>
-            <p>{photo.title}</p>
+          <div key={photo.id} className="album-photo">
             <img src={photo.thumbnailUrl} alt={photo.title} />
-          </li>
+            <p>{photo.title}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

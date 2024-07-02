@@ -31,15 +31,17 @@ const LandingPage = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return <div className="error">Error: {error}</div>;
 
   return (
-    <div>
+    <div className="container">
       <h1>Landing Page</h1>
-      <p>Total Users: {stats.users}</p>
-      <p>Total Albums: {stats.albums}</p>
-      <p>Total Photos: {stats.photos}</p>
+      <div className="stats">
+        <div>Total Users: {stats.users}</div>
+        <div>Total Albums: {stats.albums}</div>
+        <div>Total Photos: {stats.photos}</div>
+      </div>
       <ul>
         {users.map(user => (
           <li key={user.id}>

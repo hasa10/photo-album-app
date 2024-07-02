@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import UserAlbums from './components/UserAlbums';
 import AlbumPhotos from './components/AlbumPhotos';
+import './App.css'; // Import the CSS file
 
 function App() {
   return (
